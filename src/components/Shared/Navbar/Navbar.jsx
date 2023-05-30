@@ -4,18 +4,19 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <nav className=" flex flex-wrap bg-opacity-20 bg-slate-100 w-full  fixed  z-30 lg:pl-36 ">
+    <nav className=" flex flex-wrap bg-opacity-20 bg-slate-900 w-full  fixed  z-30 lg:pl-36 ">
       <div className="container px-4 mx-auto flex flex-wrap justify-around items-center">
         <div className="w-full relative lg:w-auto lg:static lg:block lg:justify-start">
           <Link
             to="/"
-            className="text-lg  items-center  font-bold leading-relaxed gap-2 flex mr-10 py-3 whitespace-nowrap uppercase text-black"
+            className="text-md  items-center  font-bold leading-relaxed gap-2 flex mr-10 py-3 whitespace-nowrap uppercase text-black"
           >
             {/* <img className=" rounded-full w-12 h-12" src={logo} alt="" /> */}
 
-            <h1 className="bg-gradient-to-r animate-text from-gray-700 via-orange-300 to-gray-600 bg-clip-text text-transparent">
+            <h1 className="bg-gradient-to-r animate-text from-gray-300 via-orange-300 to-gray-200 bg-clip-text text-transparent">
               {" "}
-              Bistro Boss
+              Khana Dhana <br />
+              Restaurant
             </h1>
           </Link>
           <button
