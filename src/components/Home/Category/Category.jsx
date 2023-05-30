@@ -17,7 +17,7 @@ const Category = () => {
         subHeading="From 11:00am to 10:00pm"
         heading="Order Online"
       ></SectionTitle>
-      <div className="mt-6 px-24 py-10">
+      <div className="mt-6 md:px-24 px-4 py-8">
         <Swiper
           slidesPerView={4}
           spaceBetween={2}
@@ -30,33 +30,33 @@ const Category = () => {
           <SwiperSlide>
             <div>
               <img src={img1} alt="" />
-              <h2 className="-mt-12 shadow-xl border-2 text-center text-2xl text-white">
+              <h2 className="-mt-12 shadow-xl  text-center text-2xl text-white">
                 SALADS
               </h2>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <img src={img2} alt="" />
-            <h2 className="-mt-12 shadow-xl border-2 text-center text-2xl text-white">
+            <h2 className="-mt-12 shadow-xl  text-center text-2xl text-white">
               SOUPS
             </h2>
           </SwiperSlide>
           <SwiperSlide>
             <img src={img3} alt="" />
-            <h2 className="-mt-12 shadow-xl border-2 text-center text-2xl text-white">
+            <h2 className="-mt-12 shadow-xl  text-center text-2xl text-white">
               PIZZAS
             </h2>
           </SwiperSlide>
 
           <SwiperSlide>
             <img src={img4} alt="" />
-            <h2 className="-mt-12 shadow-xl border-2 text-center text-2xl text-white">
+            <h2 className="-mt-12 shadow-xl  text-center text-2xl text-white">
               DESERTS
             </h2>
           </SwiperSlide>
           <SwiperSlide>
             <img src={img3} alt="" />
-            <h2 className="-mt-12 shadow-xl border-2 text-center text-2xl text-white">
+            <h2 className="-mt-12 shadow-xl  text-center text-2xl text-white">
               CREAM CUP
             </h2>
           </SwiperSlide>
@@ -67,6 +67,9 @@ const Category = () => {
             </h2>
           </SwiperSlide>
         </Swiper>
+      </div>
+      <div className="">
+        <div></div>
       </div>
     </div>
   );
