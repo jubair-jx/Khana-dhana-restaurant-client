@@ -76,7 +76,7 @@ const Navbar = () => {
 
             <li className="nav-item">
               <Link
-                to="/allToys"
+                to="/menu"
                 className="px-2 rounded-lg hover:bg-gray-50 py-2 flex items-center text-xs uppercase font-semibold leading-snug duration-300 text-white hover:text-orange-400"
               >
                 <span className="ml-2 text-md flex items-center justify-center">

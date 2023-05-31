@@ -6,8 +6,14 @@ import "react-tabs/style/react-tabs.css";
 import useMenu from "../../../hooks/useMenu";
 import OrderCard from "../../Shared/OrderCard/OrderCard";
 import OrderMap from "./OrderMap";
+import { useParams } from "react-router-dom";
 const Order = () => {
-  const [tabIndex, setTabIndex] = useState(0);
+  const categories = ["salad", "pizza", "soup", "dessert", "drinks"];
+  const { category } = useParams();
+  const initilizeCategory = categories.indexOf(category);
+  const [tabIndex, setTabIndex] = useState(initilizeCategory);
+
+  console.log(category);
   const [menu] = useMenu();
   const desserts = menu.filter((item) => item.category === "dessert");
   const soup = menu.filter((item) => item.category === "soup");

@@ -31,7 +31,6 @@ const Menu = () => {
         img={MenuImg}
       ></Cover>
       <div className="mt-8">
-        <Cover img={menuImg} title="our menu"></Cover>
         {/* main cover */}
         <SectionTitle
           subHeading="Don't Miss"
