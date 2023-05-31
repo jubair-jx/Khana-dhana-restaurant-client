@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import ShowMenuItem from "./ShowMenuItem";
 
-const Menu = () => {
+const PopularMenu = () => {
   const [popularMenu, setPopularMenu] = useState([]);
   useEffect(() => {
     fetch("menu.json")
@@ -29,4 +29,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default PopularMenu;
