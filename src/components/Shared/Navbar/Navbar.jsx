@@ -68,7 +68,7 @@ const Navbar = () => {
             <li className="nav-item">
               <Link
                 to="/"
-                className="px-2 py-2 rounded-lg hover:bg-gray-50 text-center flex items-center text-xs uppercase font-semibold leading-snug duration-300 text-[#0a0a0a] hover:text-orange-400"
+                className="px-2 py-2 rounded-lg hover:bg-gray-50 text-center flex items-center text-xs uppercase font-semibold leading-snug duration-300 text-white hover:text-orange-400"
               >
                 <span className="ml-2 text-md">Home</span>
               </Link>
@@ -76,11 +76,11 @@ const Navbar = () => {
 
             <li className="nav-item">
               <Link
-                to="/allToys"
-                className="px-2 rounded-lg hover:bg-gray-50 py-2 flex items-center text-xs uppercase font-semibold leading-snug duration-300 text-[#0a0a0a] hover:text-orange-400"
+                to="/menu"
+                className="px-2 rounded-lg hover:bg-gray-50 py-2 flex items-center text-xs uppercase font-semibold leading-snug duration-300 text-white hover:text-orange-400"
               >
                 <span className="ml-2 text-md flex items-center justify-center">
-                  All Toys
+                  Our Menu
                 </span>
               </Link>
             </li>
@@ -88,20 +88,20 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link
                   to="addToy"
-                  className="px-1 py-2 rounded-lg hover:bg-gray-50 flex items-center text-xs uppercase font-semibold leading-snug duration-300 text-[#0a0a0a] hover:text-orange-400"
+                  className="px-1 py-2 rounded-lg hover:bg-gray-50 flex items-center text-xs uppercase font-semibold leading-snug duration-300 text-white hover:text-orange-400"
                 >
                   <span className="ml-2 text-md flex items-center justify-center">
-                    Add a Toys
+                    Our Shop
                   </span>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
                   to="/myToys"
-                  className="px-1 py-2 rounded-lg hover:bg-gray-50 flex items-center text-xs uppercase font-semibold leading-snug duration-300 text-[#0a0a0a] hover:text-orange-400"
+                  className="px-1 py-2 rounded-lg hover:bg-gray-50 flex items-center text-xs uppercase font-semibold leading-snug duration-300 text-white hover:text-orange-400"
                 >
                   <span className="ml-2 text-md flex items-center justify-center">
-                    My Toys
+                    Dashboard
                   </span>
                 </Link>
               </li>
@@ -110,7 +110,7 @@ const Navbar = () => {
             <li className="nav-item">
               <Link
                 to="/blog"
-                className="px-1 py-2 flex rounded-lg hover:bg-gray-50 items-center text-xs uppercase font-semibold leading-snug duration-300 text-[#0a0a0a] hover:text-orange-400"
+                className="px-1 py-2 flex rounded-lg hover:bg-gray-50 items-center text-xs uppercase font-semibold leading-snug duration-300 text-white hover:text-orange-400"
               >
                 <span className="ml-2 text-md">Blog</span>
               </Link>
@@ -119,7 +119,7 @@ const Navbar = () => {
             <li className="nav-item">
               <Link
                 to="/"
-                className="px-1 py-2 flex items-center rounded-lg hover:bg-gray-50 text-xs uppercase font-semibold leading-snug duration-300 text-[#0a0a0a] hover:text-orange-400"
+                className="px-1 py-2 flex items-center rounded-lg hover:bg-gray-50 text-xs uppercase font-semibold leading-snug duration-300 text-white hover:text-orange-400"
               >
                 <span className="ml-2 text-md flex items-center justify-center">
                   Contact Us
