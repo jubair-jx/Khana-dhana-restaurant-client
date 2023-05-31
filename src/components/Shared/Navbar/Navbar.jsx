@@ -76,7 +76,7 @@ const Navbar = () => {
 
             <li className="nav-item">
               <Link
-                to="/menu"
+                to="/allToys"
                 className="px-2 rounded-lg hover:bg-gray-50 py-2 flex items-center text-xs uppercase font-semibold leading-snug duration-300 text-white hover:text-orange-400"
               >
                 <span className="ml-2 text-md flex items-center justify-center">
@@ -87,7 +87,7 @@ const Navbar = () => {
             <>
               <li className="nav-item">
                 <Link
-                  to="addToy"
+                  to="/order"
                   className="px-1 py-2 rounded-lg hover:bg-gray-50 flex items-center text-xs uppercase font-semibold leading-snug duration-300 text-white hover:text-orange-400"
                 >
                   <span className="ml-2 text-md flex items-center justify-center">
