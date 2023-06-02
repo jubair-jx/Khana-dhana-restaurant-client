@@ -29,7 +29,7 @@ const Login = () => {
     console.log(email, password);
     signIn(email, password).then((result) => {
       const user = result.user;
-      console.log(user).catch((err) => console.log(err));
+      console.log(user);
     });
   };
   const handleValidate = () => {

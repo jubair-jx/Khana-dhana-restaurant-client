@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Context/AuthProvider";
+import { useContext } from "react";
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const { users, logOut } = useContext(AuthContext);
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   return (
     <nav className=" flex flex-wrap bg-opacity-20 bg-slate-900 w-full  fixed  z-30 lg:pl-36 ">
       <div className="container px-4 mx-auto flex flex-wrap justify-around items-center">
@@ -127,14 +135,26 @@ const Navbar = () => {
               </Link>
             </li>
 
-            <li className="nav-item">
+            {users ? (
+              <>
+                <li className="nav-item">
+                  <Link
+                    onClick={handleLogout}
+                    to="/login"
+                    className=" text-white bg-violet-600  focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-7 py-3 text-center"
+                  >
+                    Logout
+                  </Link>
+                </li>
+              </>
+            ) : (
               <Link
                 to="/login"
                 className=" text-white bg-violet-600  focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-7 py-3 text-center"
               >
                 Login
               </Link>
-            </li>
+            )}
             {/* <div className="lg:ml-72 flex gap-4  items-center md:mb-0 md:mt-0 md:ml-0 mb-8 mt-2 ml-4  ">
               <div className="mr-0"></div>
             </div> */}
