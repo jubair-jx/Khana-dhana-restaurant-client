@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
@@ -12,11 +12,15 @@ import {
   validateCaptcha,
 } from "react-simple-captcha";
 import { AuthContext } from "../../../Context/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const captchaRef = useRef(null);
   const { signIn } = useContext(AuthContext);
   const [disabled, setDisabled] = useState(true);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   useEffect(() => {
     loadCaptchaEnginge(6);
   }, []);
@@ -29,7 +33,14 @@ const Login = () => {
     console.log(email, password);
     signIn(email, password).then((result) => {
       const user = result.user;
-      console.log(user);
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "User Has Been Login",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+      navigate(from, { replace: true });
     });
   };
   const handleValidate = () => {
