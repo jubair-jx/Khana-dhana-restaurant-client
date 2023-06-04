@@ -40,22 +40,47 @@ const MyCart = () => {
         <h3 className="text-3xl">Total Price: ${total}</h3>
         <button className="btn btn-warning btn-sm">PAY</button>
       </div>
-      <div className="overflow-x-auto w-full">
-        <table className="table w-full">
+      <div className="overflow-x-auto  overflow-hidden rounded-lg border border-gray-200 shadow-md md:m-6">
+        <table className="table w-full  border-collapse bg-white text-left text-sm text-gray-500">
           {/* head */}
-          <thead>
+          <thead className=" ">
             <tr>
-              <th>#</th>
-              <th>Food</th>
-              <th>Item Name</th>
-              <th>Price</th>
-              <th>Action</th>
+              <th
+                scope="col"
+                className=" px-2 md:px-4 py-4 font-medium text-gray-900"
+              >
+                Sl No :
+              </th>
+              <th
+                scope="col"
+                className=" px-2 md:px-16 py-4 font-medium text-gray-900"
+              >
+                Food :
+              </th>
+              <th
+                scope="col"
+                className=" px-2 md:px-16 py-4 font-medium text-gray-900"
+              >
+                Item Name :
+              </th>
+              <th
+                scope="col"
+                className=" px-2 md:px-16 py-4 font-medium text-gray-900"
+              >
+                Price :
+              </th>
+              <th
+                scope="col"
+                className=" px-2 md:px-16 py-4 font-medium text-gray-900"
+              >
+                Action :
+              </th>
             </tr>
           </thead>
           <tbody>
             {cart.map((item, index) => (
               <tr key={item._id}>
-                <td>{index + 1}</td>
+                <td className="md:pl-8 pl-2">{index + 1}</td>
                 <td>
                   <div className="avatar">
                     <div className="mask mask-squircle w-12 h-12">
@@ -66,9 +91,9 @@ const MyCart = () => {
                     </div>
                   </div>
                 </td>
-                <td>{item.name}</td>
-                <td className="text-end">${item.price}</td>
-                <td>
+                <td className="md:pl-8 pl-2">{item.name}</td>
+                <td className="text-end md:pl-8 pl-2">${item.price}</td>
+                <td className="md:pl-8 pl-2">
                   <button
                     onClick={() => handleDelete(item)}
                     className="btn btn-ghost bg-red-600  text-white"
