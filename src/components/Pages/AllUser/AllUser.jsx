@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { FaRegTrashAlt, FaTrashAlt, FaUserShield } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const AllUser = () => {
   const { data: users = [], refetch } = useQuery(["users"], async () => {
@@ -10,7 +11,25 @@ const AllUser = () => {
   });
 
   const handleDelete = (user) => {};
-  const handleMakeAdmin = (user) => {};
+  const handleMakeAdmin = (user) => {
+    fetch(`http://localhost:5000/users/admin/${user._id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${user.name} is an Admin Now!`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  };
   return (
     <div className="w-full">
       <Helmet>
@@ -42,7 +61,7 @@ const AllUser = () => {
                     "admin"
                   ) : (
                     <button
-                      onClick={() => handleMakeAdmin(user._id)}
+                      onClick={() => handleMakeAdmin(user)}
                       className="btn btn-ghost bg-orange-600  text-white"
                     >
                       <FaUserShield></FaUserShield>
