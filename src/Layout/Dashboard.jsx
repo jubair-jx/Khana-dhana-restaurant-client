@@ -2,10 +2,11 @@ import React from "react";
 import useCart from "../hooks/useCart";
 import { NavLink, Outlet } from "react-router-dom";
 import { FaBook, FaHome, FaUsers, FaUtensils, FaWallet } from "react-icons/fa";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
   const [cart] = useCart();
-  const isAdmin = true;
+  const [isAdmin] = useAdmin();
   return (
     <div>
       <div className="drawer drawer-mobile md:px-10 md:py-4 rounded-lg">
