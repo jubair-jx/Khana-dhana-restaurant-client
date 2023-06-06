@@ -1,16 +1,59 @@
 import React from "react";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import { useForm } from "react-hook-form";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
+const imgToken = import.meta.env.VITE_Image_Token;
+
+console.log(imgToken);
 const AddItem = () => {
+  const [axiosSecure] = useAxiosSecure();
   const {
     register,
     handleSubmit,
-
+    reset,
     formState: { errors },
   } = useForm();
+  const imgUrl = `https://api.imgbb.com/1/upload?key=${imgToken}`;
   const onSubmit = (data) => {
     console.log(data);
+    const formData = new FormData();
+    formData.append("image", data.image[0]);
+    fetch(imgUrl, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imgRes) => {
+        if (imgRes.success) {
+          const imgUrl = imgRes.data.display_url;
+
+          const { name, price, category, details } = data;
+
+          const newItem = {
+            name,
+            price: parseFloat(price),
+            category,
+            details,
+            image: imgUrl,
+          };
+
+          console.log(newItem);
+          axiosSecure.post("/menu", newItem).then((data) => {
+            if (data.data.insertedId) {
+              reset();
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Item added successfully",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            }
+          });
+        }
+      });
   };
 
   return (
