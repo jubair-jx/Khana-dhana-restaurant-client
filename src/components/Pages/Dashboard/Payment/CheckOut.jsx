@@ -74,7 +74,7 @@ const CheckOut = ({ price, cart }) => {
       };
       axiosSecure.post("payment", paymentInfo).then((res) => {
         console.log(res.data);
-        if (res.data.insertedId) {
+        if (res.data.result.insertedId) {
           Swal.fire("Your Payment is Done, Now You Can Chill....");
         }
       });
